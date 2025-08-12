@@ -1,15 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Suryadoot Energy Solution</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="logo.jpg" />
+  <link rel="icon" type="image/png" href="favicon.png" />
 
   <style>
-    /* General Reset */
     body {
       font-family: Arial, sans-serif;
       margin: 0;
@@ -17,63 +16,51 @@
       background: #f8f9fa;
     }
 
-    /* OUTER DARK BACKGROUND HEADER */
-    .header-wrapper {
-      background-color: #222;
-      padding: 12px;
-    }
-
-    /* INNER WHITE HEADER CARD */
+    /* --- New Custom Header --- */
     .custom-header {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      background-color: #fff;
-      padding: 16px 20px;
-      border-radius: 12px;
-      max-width: 1200px;
-      margin: auto;
-      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+      background-color: #ffffff;
+      padding: 12px 20px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
     }
 
     .menu-icon,
     .search-icon {
       font-size: 24px;
-      color: #333;
       cursor: pointer;
-    }
-
-    .search-img {
-      width: 28px;
-      height: 28px;
+      color: #333;
     }
 
     .logo-container {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
     }
 
     .logo {
-      width: 60px;
-      height: 60px;
+      width: 40px;
+      height: 40px;
       border-radius: 50%;
       object-fit: cover;
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
     }
 
     .brand-text {
-      line-height: 1.2;
+      line-height: 1.1;
     }
 
     .brand-title {
       font-weight: bold;
-      font-size: 1.4em;
-      color: #000;
+      font-size: 1.2em;
+      color: #222;
     }
 
     .brand-subtitle {
-      font-size: 1em;
+      font-size: 0.8em;
       color: #666;
     }
 
@@ -87,7 +74,7 @@
     }
 
     h2 {
-      color: #333;
+      color: #e65100;
       margin-top: 0;
     }
 
@@ -95,12 +82,16 @@
       padding-left: 20px;
     }
 
-    .services-list, .why-list, .contact-list {
+    .services-list,
+    .why-list,
+    .contact-list {
       list-style: none;
       padding: 0;
     }
 
-    .services-list li, .why-list li, .contact-list li {
+    .services-list li,
+    .why-list li,
+    .contact-list li {
       margin-bottom: 10px;
     }
 
@@ -110,8 +101,8 @@
     }
 
     .testimonials {
-      background: #eef4e9;
-      border-left: 4px solid #ccc;
+      background: #f1f8e9;
+      border-left: 4px solid #ffc107;
       padding: 20px;
       margin: 20px 0;
       border-radius: 8px;
@@ -147,31 +138,17 @@
       margin-top: 40px;
     }
 
-    /* Responsive layout */
     @media (max-width: 600px) {
-      .custom-header {
-        flex-direction: column;
-        text-align: center;
-        gap: 12px;
-      }
-
-      .logo-container {
-        flex-direction: column;
-      }
-
       section {
-        padding: 18px 10px;
+        padding: 18px 5px;
       }
 
       .brand-title {
-        font-size: 1.2em;
+        font-size: 1em;
       }
 
-      .brand-subtitle {
-        font-size: 0.9em;
-      }
-
-      .menu-icon, .search-icon {
+      .menu-icon,
+      .search-icon {
         font-size: 20px;
       }
     }
@@ -180,26 +157,21 @@
 
 <body>
 
-  <!-- HEADER -->
-  <div class="header-wrapper">
-    <header class="custom-header">
-      <div class="menu-icon">☰</div>
+  <!-- New Header -->
+  <header class="custom-header">
+    <div class="menu-icon">☰</div>
 
-      <div class="logo-container">
-        <img src="logo.jpg" alt="Suryadoot Logo" class="logo" />
-        <div class="brand-text">
-          <span class="brand-title">Suryadoot Energy Solution</span><br />
-          <span class="brand-subtitle">Powering the Future with the Sun</span>
-        </div>
+    <div class="logo-container">
+      <img src="logo.png" alt="Suryadoot Logo" class="logo" />
+      <div class="brand-text">
+        <span class="brand-title">Suryadoot</span><br>
+        <span class="brand-subtitle">Energy Solution</span>
       </div>
+    </div>
 
-      <div class="search-icon">
-        <img src="search-icon.png" alt="Search" class="search-img" />
-      </div>
-    </header>
-  </div>
+    <div class="search-icon">🔍</div>
+  </header>
 
-  <!-- MAIN CONTENT -->
   <section>
     <h2>About Us</h2>
     <p>
@@ -280,10 +252,11 @@
     <br>
     <h3>Contact / Enquiry Form</h3>
     <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdQ_qtqYgMvOsKVhnGrcbhT8jOEen344KjnJM5K6C3G3f5XsQ/viewform?embedded=true"
-      width="100%" height="750" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+      width="100%" height="750" frameborder="0" marginheight="0" marginwidth="0">
+      Loading…
+    </iframe>
   </section>
 
-  <!-- FOOTER -->
   <footer>
     &copy; 2025 Suryadoot Energy Solution | Email: suryadoot.energy@gmail.com
   </footer>
