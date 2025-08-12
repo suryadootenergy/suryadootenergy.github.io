@@ -1,292 +1,127 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Suryadoot Energy Solution</title>
-
-  <!-- Favicon -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="icon" type="image/png" href="logo.jpg" />
-
   <style>
-    /* General Reset */
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f8f9fa;
-    }
-
-    /* OUTER DARK BACKGROUND HEADER */
-    .header-wrapper {
-      background-color: #222;
-      padding: 12px;
-    }
-
-    /* INNER WHITE HEADER CARD */
-    .custom-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      background-color: #fff;
-      padding: 16px 20px;
-      border-radius: 12px;
-      max-width: 1200px;
-      margin: auto;
-      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-    }
-
-    .menu-icon,
-    .search-icon {
-      font-size: 24px;
-      color: #333;
-      cursor: pointer;
-    }
-
-    .search-img {
-      width: 28px;
-      height: 28px;
-    }
-
-    .logo-container {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .logo {
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      object-fit: cover;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    }
-
-    .brand-text {
-      line-height: 1.2;
-    }
-
-    .brand-title {
-      font-weight: bold;
-      font-size: 1.4em;
-      color: #000;
-    }
-
-    .brand-subtitle {
-      font-size: 1em;
-      color: #666;
-    }
-
-    section {
-      padding: 30px 20px;
-      max-width: 900px;
-      margin: 30px auto;
-      background: #fff;
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-    }
-
-    h2 {
-      color: #333;
-      margin-top: 0;
-    }
-
-    ul, ol {
-      padding-left: 20px;
-    }
-
-    .services-list, .why-list, .contact-list {
-      list-style: none;
-      padding: 0;
-    }
-
-    .services-list li, .why-list li, .contact-list li {
-      margin-bottom: 10px;
-    }
-
-    .icon {
-      font-size: 1.2em;
-      margin-right: 8px;
-    }
-
-    .testimonials {
-      background: #eef4e9;
-      border-left: 4px solid #ccc;
-      padding: 20px;
-      margin: 20px 0;
-      border-radius: 8px;
-    }
-
-    .testimonial {
-      margin-bottom: 15px;
-      font-style: italic;
-    }
-
-    .testimonial span {
-      display: block;
-      margin-top: 5px;
-      font-weight: bold;
-      color: #333;
-    }
-
-    .contact-info {
-      font-size: 1.1em;
-    }
-
-    .contact-info span {
-      display: block;
-      margin-bottom: 8px;
-    }
-
-    footer {
-      text-align: center;
-      padding: 18px;
-      background: #343a40;
-      color: #fff;
-      font-size: 1em;
-      margin-top: 40px;
-    }
-
-    /* Responsive layout */
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f8f9fa; }
+    header { background: #ffc107; padding: 30px 20px 15px 20px; text-align: center; color: #222; }
+    header h1 { font-size: 2.5em; margin-bottom: 10px; }
+    header p { font-size: 1.2em; margin-top: 0; }
+    section { padding: 30px 20px; max-width: 900px; margin: 30px auto; background: #fff; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.04);}
+    h2 { color: #e65100; margin-top: 0; }
+    ul, ol { padding-left: 20px; }
+    .services-list, .why-list, .contact-list { list-style: none; padding: 0; }
+    .services-list li, .why-list li, .contact-list li { margin-bottom: 10px; }
+    .icon { font-size: 1.2em; margin-right: 8px; }
+    .testimonials { background: #f1f8e9; border-left: 4px solid #ffc107; padding: 20px; margin: 20px 0; border-radius: 8px; }
+    .testimonial { margin-bottom: 15px; font-style: italic; }
+    .testimonial span { display: block; margin-top: 5px; font-weight: bold; color: #333; }
+    .contact-info { font-size: 1.1em; }
+    .contact-info span { display: block; margin-bottom: 8px; }
+    footer { text-align: center; padding: 18px; background: #343a40; color: #fff; font-size: 1em; margin-top: 40px; }
     @media (max-width: 600px) {
-      .custom-header {
-        flex-direction: column;
-        text-align: center;
-        gap: 12px;
-      }
-
-      .logo-container {
-        flex-direction: column;
-      }
-
-      section {
-        padding: 18px 10px;
-      }
-
-      .brand-title {
-        font-size: 1.2em;
-      }
-
-      .brand-subtitle {
-        font-size: 0.9em;
-      }
-
-      .menu-icon, .search-icon {
-        font-size: 20px;
-      }
+      section { padding: 18px 5px; }
+      header h1 { font-size: 1.5em; }
     }
   </style>
 </head>
-
 <body>
 
-  <!-- HEADER -->
-  <div class="header-wrapper">
-    <header class="custom-header">
-      <div class="menu-icon">☰</div>
+<header>
+  <img src="logo.jpg" alt="Suryadoot Energy Solutions Logo" 
+       style="width:120px; height:120px; object-fit:cover; border-radius:50%; box-shadow:0 2px 8px rgba(0,0,0,0.08); margin-bottom: 10px;">
+  <h1>Powering the Future with the Sun</h1>
+</header>
 
-      <div class="logo-container">
-        <img src="logo.jpg" alt="Suryadoot Logo" class="logo" />
-        <div class="brand-text">
-          <span class="brand-title">Suryadoot Energy Solution</span><br />
-          <span class="brand-subtitle">Powering the Future with the Sun</span>
-        </div>
-      </div>
+<section>
+  <h2>About Us</h2>
+  <p>
+    At Suryadoot Energy Solution, we specialize in designing, installing, and maintaining <b>On-Grid Solar Power Systems</b> for residential, commercial, and industrial clients. With a commitment to clean energy and sustainable growth, we help you reduce electricity bills while contributing to a greener planet.
+  </p>
+  <p>
+    Our team of experts ensures that each solar project is tailored to your needs, budget, and power consumption pattern — delivering efficiency, performance, and peace of mind.
+  </p>
+</section>
 
-      <div class="search-icon">
-        <img src="search-icon.png" alt="Search" class="search-img" />
-      </div>
-    </header>
+<section>
+  <h2>⚡ Our Services</h2>
+  <ul class="services-list">
+    <li><span class="icon">🔌</span><b>On-Grid Solar System Installation</b><br>
+      High-efficiency grid-tied solar systems for homes, offices, industries, and institutions.</li>
+    <li><span class="icon">📐</span><b>Site Survey & System Design</b><br>
+      Technical site assessment and customized system design for maximum output.</li>
+    <li><span class="icon">💸</span><b>Government Subsidy Assistance</b><br>
+      Help in availing MNRE-approved subsidies and net-metering documentation.</li>
+    <li><span class="icon">🔧</span><b>Solar Panel Supply & Mounting</b><br>
+      Premium solar panels, inverters, and mounting structures from trusted manufacturers.</li>
+    <li><span class="icon">🛠️</span><b>System Commissioning & AMC</b><br>
+      Timely commissioning and post-installation support with Annual Maintenance Contracts.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>☀️ Why Choose Us?</h2>
+  <ul class="why-list">
+    <li>✅ Experienced Solar Professionals</li>
+    <li>✅ High-Quality Equipment</li>
+    <li>✅ End-to-End Project Execution</li>
+    <li>✅ Competitive Pricing</li>
+    <li>✅ Fast Installation & Reliable Support</li>
+    <li>✅ MNRE & DISCOM Approved Vendor</li>
+  </ul>
+</section>
+
+<section>
+  <h2>🔋 What is an On-Grid Solar System?</h2>
+  <p>
+    An on-grid solar system is connected to the utility grid. It generates solar electricity during the day, powering your appliances directly and feeding excess energy to the grid. You get credited for this power, effectively lowering your electricity bill.
+  </p>
+  <p>
+    It’s the most cost-effective and popular solar solution for urban areas with stable grid availability.
+  </p>
+</section>
+
+<section>
+  <h2>💬 Client Testimonials</h2>
+  <div class="testimonials">
+    <div class="testimonial">
+      "Suryadoot helped us install a 3kW on-grid system for our factory. The savings on power bills are incredible!"
+      <span>– Rajesh M., Kareli</span>
+    </div>
+    <div class="testimonial">
+      "Professional, fast, and knowledgeable team. Highly recommended for solar rooftop projects."
+      <span>– Priya T., Narsinghpur</span>
+    </div>
   </div>
+</section>
 
-  <!-- MAIN CONTENT -->
-  <section>
-    <h2>About Us</h2>
-    <p>
-      At Suryadoot Energy Solution, we specialize in designing, installing, and maintaining
-      <b>On-Grid Solar Power Systems</b> for residential, commercial, and industrial clients.
-      With a commitment to clean energy and sustainable growth, we help you reduce electricity bills while contributing to a greener planet.
-    </p>
-    <p>
-      Our team of experts ensures that each solar project is tailored to your needs, budget, and power consumption pattern — delivering efficiency, performance, and peace of mind.
-    </p>
-  </section>
-
-  <section>
-    <h2>⚡ Our Services</h2>
-    <ul class="services-list">
-      <li><span class="icon">🔌</span><b>On-Grid Solar System Installation</b><br>
-        High-efficiency grid-tied solar systems for homes, offices, industries, and institutions.</li>
-      <li><span class="icon">📐</span><b>Site Survey & System Design</b><br>
-        Technical site assessment and customized system design for maximum output.</li>
-      <li><span class="icon">💸</span><b>Government Subsidy Assistance</b><br>
-        Help in availing MNRE-approved subsidies and net-metering documentation.</li>
-      <li><span class="icon">🔧</span><b>Solar Panel Supply & Mounting</b><br>
-        Premium solar panels, inverters, and mounting structures from trusted manufacturers.</li>
-      <li><span class="icon">🛠️</span><b>System Commissioning & AMC</b><br>
-        Timely commissioning and post-installation support with Annual Maintenance Contracts.</li>
+<section>
+  <h2>📞 Get in Touch</h2>
+  <div class="contact-info">
+    <span>Ready to go solar?</span>
+    <span>📱 <b>Call Us:</b> +91-8989933932</span>
+    <span>📧 <b>Email:</b> suryadoot.energy@gmail.com</span>
+    <span>📍 <b>Location:</b> [Your Office Address]</span>
+    <ul class="contact-list">
+      <li>✅ Free Site Visit</li>
+      <li>✅ 25-Year Panel Warranty</li>
+      <li>✅ Start Saving from Day One</li>
     </ul>
-  </section>
+  </div>
+  <br>
+  <h3>Contact / Enquiry Form</h3>
+  <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdQ_qtqYgMvOsKVhnGrcbhT8jOEen344KjnJM5K6C3G3f5XsQ/viewform?embedded=true" 
+        width="100%" height="750" frameborder="0" marginheight="0" marginwidth="0">
+  Loading…
+  </iframe>
+</section>
 
-  <section>
-    <h2>☀️ Why Choose Us?</h2>
-    <ul class="why-list">
-      <li>✅ Experienced Solar Professionals</li>
-      <li>✅ High-Quality Equipment</li>
-      <li>✅ End-to-End Project Execution</li>
-      <li>✅ Competitive Pricing</li>
-      <li>✅ Fast Installation & Reliable Support</li>
-      <li>✅ MNRE & DISCOM Approved Vendor</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>🔋 What is an On-Grid Solar System?</h2>
-    <p>
-      An on-grid solar system is connected to the utility grid. It generates solar electricity during the day, powering your appliances directly and feeding excess energy to the grid. You get credited for this power, effectively lowering your electricity bill.
-    </p>
-    <p>
-      It’s the most cost-effective and popular solar solution for urban areas with stable grid availability.
-    </p>
-  </section>
-
-  <section>
-    <h2>💬 Client Testimonials</h2>
-    <div class="testimonials">
-      <div class="testimonial">
-        "Suryadoot helped us install a 3kW on-grid system for our factory. The savings on power bills are incredible!"
-        <span>– Rajesh M., Kareli</span>
-      </div>
-      <div class="testimonial">
-        "Professional, fast, and knowledgeable team. Highly recommended for solar rooftop projects."
-        <span>– Priya T., Narsinghpur</span>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <h2>📞 Get in Touch</h2>
-    <div class="contact-info">
-      <span>Ready to go solar?</span>
-      <span>📱 <b>Call Us:</b> +91-8989933932</span>
-      <span>📧 <b>Email:</b> suryadoot.energy@gmail.com</span>
-      <span>📍 <b>Location:</b> [Your Office Address]</span>
-      <ul class="contact-list">
-        <li>✅ Free Site Visit</li>
-        <li>✅ 25-Year Panel Warranty</li>
-        <li>✅ Start Saving from Day One</li>
-      </ul>
-    </div>
-    <br>
-    <h3>Contact / Enquiry Form</h3>
-    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdQ_qtqYgMvOsKVhnGrcbhT8jOEen344KjnJM5K6C3G3f5XsQ/viewform?embedded=true"
-      width="100%" height="750" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
-  </section>
-
-  <!-- FOOTER -->
-  <footer>
-    &copy; 2025 Suryadoot Energy Solution | Email: suryadoot.energy@gmail.com
-  </footer>
+<footer>
+  &copy; 2025 Suryadoot Energy Solution | Email: suryadoot.energy@gmail.com
+</footer>
 
 </body>
 </html>
