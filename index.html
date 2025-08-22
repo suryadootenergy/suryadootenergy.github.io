@@ -7,7 +7,6 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" href="logo.jpg" />
     <style>
         body { font-family: 'Inter', sans-serif; }
         .gradient-bg {
@@ -75,17 +74,17 @@
     <nav class="gradient-bg text-white shadow-2xl fixed w-full top-0 z-50 backdrop-blur-sm">
         <div class="container mx-auto px-6">
             <div class="flex justify-between items-center py-5">
-                <div class="flex items-center space-x-4">
-                    <div class="w-14 h-14 rounded-full overflow-hidden shadow-lg bg-white">
+                <div class="flex items-center space-x-3">
+                    <div class="w-12 h-12 lg:w-14 lg:h-14 rounded-full overflow-hidden shadow-lg bg-white">
                         <img src="logo.jpg" alt="Suryadoot Energy Solution Logo" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                         <div class="w-full h-full bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full flex items-center justify-center shadow-lg" style="display: none;">
-                            <i class="fas fa-sun text-white text-2xl animate-pulse-slow"></i>
+                            <i class="fas fa-sun text-white text-xl lg:text-2xl animate-pulse-slow"></i>
                         </div>
                     </div>
                     <div>
-                        <h1 class="text-2xl font-bold tracking-tight">Suryadoot Energy Solution</h1>
-                        <p class="text-sm text-blue-200 font-medium">Premium Solar Panel Installer</p>
-                        <p class="text-xs text-blue-300 font-medium">Top 10 Solar Brands Available</p>
+                        <h1 class="text-lg lg:text-2xl font-bold tracking-tight">Suryadoot Energy Solution</h1>
+                        <p class="text-xs lg:text-sm text-blue-200 font-medium">Premium Solar Panel Installer</p>
+                        <p class="text-xs text-blue-300 font-medium hidden sm:block">Top 10 Solar Brands Available</p>
                     </div>
                 </div>
                 
@@ -113,14 +112,21 @@
             <!-- Mobile Menu -->
             <div id="mobileMenu" class="lg:hidden hidden pb-6">
                 <div class="space-y-3">
-                    <button class="block py-3 px-4 hover:bg-blue-700 rounded-lg transition-colors w-full text-left" onclick="showPage('home')">Home</button>
-                    <button class="block py-3 px-4 hover:bg-blue-700 rounded-lg transition-colors w-full text-left" onclick="showPage('about')">About Us</button>
-                    <button class="block py-3 px-4 hover:bg-blue-700 rounded-lg transition-colors w-full text-left" onclick="showPage('services')">Services</button>
-                    <button class="block py-3 px-4 hover:bg-blue-700 rounded-lg transition-colors w-full text-left" onclick="showPage('why-choose')">Why Choose Us</button>
-                    <button class="block py-3 px-4 hover:bg-blue-700 rounded-lg transition-colors w-full text-left" onclick="showPage('contact')">Contact</button>
-                    <button onclick="window.open('mailto:suryadootenergysolution@gmail.com?subject=Solar Energy Quote Request&body=Hello Uday Raj Patel,%0D%0A%0D%0AI am interested in getting a free quote for solar energy solutions. Please contact me with more details.%0D%0A%0D%0AThank you!')" class="w-full mt-4 solar-gradient text-white px-6 py-3 rounded-full font-semibold cursor-pointer">
-                        Get Free Quote
-                    </button>
+                    <button class="block py-3 px-4 hover:bg-blue-700 rounded-lg transition-colors w-full text-left" onclick="showPage('home'); toggleMobileMenu();">Home</button>
+                    <button class="block py-3 px-4 hover:bg-blue-700 rounded-lg transition-colors w-full text-left" onclick="showPage('about'); toggleMobileMenu();">About Us</button>
+                    <button class="block py-3 px-4 hover:bg-blue-700 rounded-lg transition-colors w-full text-left" onclick="showPage('services'); toggleMobileMenu();">Services</button>
+                    <button class="block py-3 px-4 hover:bg-blue-700 rounded-lg transition-colors w-full text-left" onclick="showPage('why-choose'); toggleMobileMenu();">Why Choose Us</button>
+                    <button class="block py-3 px-4 hover:bg-blue-700 rounded-lg transition-colors w-full text-left" onclick="showPage('contact'); toggleMobileMenu();">Contact</button>
+                    <div class="flex flex-col space-y-3 mt-4">
+                        <button onclick="window.open('https://wa.me/918989933932?text=Hello%20Uday%20Raj%20Patel,%0D%0A%0D%0AI%20am%20interested%20in%20solar%20energy%20solutions.%20Please%20provide%20me%20with%20more%20information%20about%20your%20services.%0D%0A%0D%0AThank%20you!', '_blank')" class="w-full bg-green-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-green-700 transition-colors cursor-pointer flex items-center justify-center space-x-2">
+                            <i class="fab fa-whatsapp"></i>
+                            <span>WhatsApp Us</span>
+                        </button>
+                        <button onclick="window.open('mailto:suryadootenergysolution@gmail.com?subject=Solar Energy Quote Request&body=Hello Uday Raj Patel,%0D%0A%0D%0AI am interested in getting a free quote for solar energy solutions. Please contact me with more details.%0D%0A%0D%0AThank you!')" class="w-full solar-gradient text-white px-6 py-3 rounded-full font-semibold cursor-pointer flex items-center justify-center space-x-2">
+                            <i class="fas fa-envelope"></i>
+                            <span>Get Free Quote</span>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -139,22 +145,31 @@
                                 🌟 Top 10 Solar Brands Available
                             </span>
                         </div>
-                        <h1 class="text-5xl lg:text-7xl font-bold mb-8 leading-tight text-gray-800">
+                        <h1 class="text-3xl sm:text-4xl lg:text-7xl font-bold mb-6 lg:mb-8 leading-tight text-gray-800">
                             Switch to <span class="text-orange-600">Solar</span><br>
                             <span class="text-blue-600">Today!</span>
                         </h1>
-                        <p class="text-xl lg:text-2xl mb-10 text-gray-700 leading-relaxed">
+                        <p class="text-lg sm:text-xl lg:text-2xl mb-8 lg:mb-10 text-gray-700 leading-relaxed">
                             Transform your energy future with premium solar solutions. Save money, save the planet, and secure energy independence with India's most trusted solar technology.
                         </p>
                         
-                        <div class="flex flex-col sm:flex-row gap-6 mb-12">
-                            <button onclick="window.open('mailto:suryadootenergysolution@gmail.com?subject=Solar Energy Quote Request&body=Hello Uday Raj Patel,%0D%0A%0D%0AI am interested in getting a free quote for solar energy solutions. Please contact me with more details.%0D%0A%0D%0AThank you!')" class="solar-gradient text-white px-10 py-5 rounded-full text-lg font-bold hover:shadow-2xl transform hover:scale-105 transition-all duration-300 flex items-center justify-center space-x-3 cursor-pointer">
-                                <i class="fas fa-calculator"></i>
-                                <span>Get Free Quote Now!</span>
+                        <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-8 lg:mb-12">
+                            <button onclick="window.open('https://wa.me/918989933932?text=Hello%20Uday%20Raj%20Patel,%0D%0A%0D%0AI%20am%20interested%20in%20solar%20energy%20solutions.%20Please%20provide%20me%20with%20more%20information%20about%20your%20services.%0D%0A%0D%0AThank%20you!', '_blank')" class="bg-green-600 hover:bg-green-700 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full text-base sm:text-lg font-bold hover:shadow-2xl transform hover:scale-105 transition-all duration-300 flex items-center justify-center space-x-2 sm:space-x-3 cursor-pointer">
+                                <i class="fab fa-whatsapp text-lg sm:text-xl"></i>
+                                <span>WhatsApp Now!</span>
                             </button>
-                            <button onclick="window.open('https://www.youtube.com/@Suryadoot_Energy', '_blank')" class="border-2 border-blue-600 text-blue-600 px-10 py-5 rounded-full text-lg font-bold hover:bg-blue-600 hover:text-white transition-all duration-300 flex items-center justify-center space-x-3 cursor-pointer">
+                            <button onclick="window.open('tel:+918989933932')" class="bg-blue-600 hover:bg-blue-700 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full text-base sm:text-lg font-bold hover:shadow-2xl transform hover:scale-105 transition-all duration-300 flex items-center justify-center space-x-2 sm:space-x-3 cursor-pointer">
+                                <i class="fas fa-phone text-lg sm:text-xl"></i>
+                                <span>Call Now!</span>
+                            </button>
+                            <button onclick="window.open('mailto:suryadootenergysolution@gmail.com?subject=Solar Energy Quote Request&body=Hello Uday Raj Patel,%0D%0A%0D%0AI am interested in getting a free quote for solar energy solutions. Please contact me with more details.%0D%0A%0D%0AThank you!')" class="solar-gradient text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full text-base sm:text-lg font-bold hover:shadow-2xl transform hover:scale-105 transition-all duration-300 flex items-center justify-center space-x-2 sm:space-x-3 cursor-pointer">
+                                <i class="fas fa-envelope"></i>
+                                <span>Contact via Email</span>
+                            </button>
+                            <button onclick="window.open('https://www.youtube.com/@Suryadoot_Energy', '_blank')" class="border-2 border-blue-600 text-blue-600 px-6 sm:px-8 py-3 sm:py-4 rounded-full text-base sm:text-lg font-bold hover:bg-blue-600 hover:text-white transition-all duration-300 flex items-center justify-center space-x-2 sm:space-x-3 cursor-pointer">
                                 <i class="fas fa-play-circle"></i>
-                                <span>Explore Services</span>
+                                <span class="hidden sm:inline">Watch Videos</span>
+                                <span class="sm:hidden">Videos</span>
                             </button>
                         </div>
                         
@@ -472,14 +487,18 @@
                 <h2 class="text-4xl lg:text-5xl font-bold text-white mb-8">Ready to Go Solar?</h2>
                 <p class="text-xl text-blue-100 mb-12 max-w-3xl mx-auto">Join thousands of satisfied customers who have made the smart switch to solar energy. Get your free consultation today and start saving immediately.</p>
                 
-                <div class="flex flex-col sm:flex-row gap-6 justify-center items-center mb-12">
-                    <button onclick="window.open('tel:+918989933932')" class="solar-gradient text-white px-10 py-5 rounded-full text-lg font-bold hover:shadow-2xl transform hover:scale-105 transition-all duration-300 flex items-center space-x-3 cursor-pointer">
-                        <i class="fas fa-phone"></i>
-                        <span>Call +91 8989933932</span>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
+                    <button onclick="window.open('https://wa.me/918989933932?text=Hello%20Uday%20Raj%20Patel,%0D%0A%0D%0AI%20am%20interested%20in%20solar%20energy%20solutions.%20Please%20provide%20me%20with%20more%20information%20about%20your%20services.%0D%0A%0D%0AThank%20you!', '_blank')" class="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-full text-lg font-bold hover:shadow-2xl transform hover:scale-105 transition-all duration-300 flex items-center space-x-3 cursor-pointer">
+                        <i class="fab fa-whatsapp"></i>
+                        <span>WhatsApp +91 8989933932</span>
                     </button>
-                    <button onclick="window.open('mailto:suryadootenergysolution@gmail.com?subject=Solar Energy Quote Request&body=Hello Uday Raj Patel,%0D%0A%0D%0AI am interested in getting a free quote for solar energy solutions. Please contact me with more details.%0D%0A%0D%0AThank you!')" class="border-2 border-white text-white px-10 py-5 rounded-full text-lg font-bold hover:bg-white hover:text-blue-900 transition-all duration-300 flex items-center space-x-3 cursor-pointer">
+                    <button onclick="window.open('tel:+918989933932')" class="solar-gradient text-white px-8 py-4 rounded-full text-lg font-bold hover:shadow-2xl transform hover:scale-105 transition-all duration-300 flex items-center space-x-3 cursor-pointer">
+                        <i class="fas fa-phone"></i>
+                        <span>Call Now</span>
+                    </button>
+                    <button onclick="window.open('mailto:suryadootenergysolution@gmail.com?subject=Solar Energy Quote Request&body=Hello Uday Raj Patel,%0D%0A%0D%0AI am interested in getting a free quote for solar energy solutions. Please contact me with more details.%0D%0A%0D%0AThank you!')" class="border-2 border-white text-white px-8 py-4 rounded-full text-lg font-bold hover:bg-white hover:text-blue-900 transition-all duration-300 flex items-center space-x-3 cursor-pointer">
                         <i class="fas fa-envelope"></i>
-                        <span>Get Free Quote</span>
+                        <span>Email Quote</span>
                     </button>
                 </div>
                 
@@ -1332,15 +1351,15 @@
                     </div>
                     <p class="text-gray-300 leading-relaxed mb-6">Your trusted partner for clean and sustainable energy solutions in Narsinghpur and beyond. We install top 10 solar brands with 500+ satisfied customers.</p>
                     <div class="flex space-x-4">
-                        <div class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors cursor-pointer">
+                        <button onclick="window.open('https://www.facebook.com/suryadoot.energy.solution', '_blank')" class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors cursor-pointer">
                             <i class="fab fa-facebook-f"></i>
-                        </div>
+                        </button>
                         <div class="w-10 h-10 bg-blue-400 rounded-full flex items-center justify-center hover:bg-blue-500 transition-colors cursor-pointer">
                             <i class="fab fa-twitter"></i>
                         </div>
-                        <div class="w-10 h-10 bg-green-600 rounded-full flex items-center justify-center hover:bg-green-700 transition-colors cursor-pointer">
+                        <button onclick="window.open('https://wa.me/918989933932?text=Hello%20Uday%20Raj%20Patel,%0D%0A%0D%0AI%20am%20interested%20in%20solar%20energy%20solutions.%20Please%20provide%20me%20with%20more%20information%20about%20your%20services.%0D%0A%0D%0AThank%20you!', '_blank')" class="w-10 h-10 bg-green-600 rounded-full flex items-center justify-center hover:bg-green-700 transition-colors cursor-pointer">
                             <i class="fab fa-whatsapp"></i>
-                        </div>
+                        </button>
                     </div>
                 </div>
                 
@@ -1472,4 +1491,4 @@ New Solar Energy Inquiry Received:
 
 Customer Details:
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9734603d25874737',t:'MTc1NTg4Njc0MC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9734791dc0b584aa',t:'MTc1NTg4Nzc2MS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
