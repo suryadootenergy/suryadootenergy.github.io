@@ -1,265 +1,1475 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Suryadoot Energy Solution</title>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="logo.jpg" />
-
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #F9F49C;  
-    }
-
-    /* --- New Custom Header --- */
-    .custom-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      background-color: #ffffff;
-      padding: 12px 20px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-      border-bottom-left-radius: 10px;
-      border-bottom-right-radius: 10px;
-    }
-
-    .menu-icon,
-    .search-icon {
-      font-size: 24px;
-      cursor: pointer;
-      color: #333;
-    }
-
-    .logo-container {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .logo {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      object-fit: cover;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    }
-
-    .brand-text {
-      line-height: 1.1;
-    }
-
-    .brand-title {
-      font-weight: bold;
-      font-size: 1.2em;
-      color: #222;
-    }
-
-    .brand-subtitle {
-      font-size: 0.8em;
-      color: #666;
-    }
-
-    section {
-      padding: 30px 20px;
-      max-width: 900px;
-      margin: 30px auto;
-      background: #fff;
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-    }
-
-    h2 {
-      color: #e65100;
-      margin-top: 0;
-    }
-
-    ul, ol {
-      padding-left: 20px;
-    }
-
-    .services-list,
-    .why-list,
-    .contact-list {
-      list-style: none;
-      padding: 0;
-    }
-
-    .services-list li,
-    .why-list li,
-    .contact-list li {
-      margin-bottom: 10px;
-    }
-
-    .icon {
-      font-size: 1.2em;
-      margin-right: 8px;
-    }
-
-    .testimonials {
-      background: #f1f8e9;
-      border-left: 4px solid #ffc107;
-      padding: 20px;
-      margin: 20px 0;
-      border-radius: 8px;
-    }
-
-    .testimonial {
-      margin-bottom: 15px;
-      font-style: italic;
-    }
-
-    .testimonial span {
-      display: block;
-      margin-top: 5px;
-      font-weight: bold;
-      color: #333;
-    }
-
-    .contact-info {
-      font-size: 1.1em;
-    }
-
-    .contact-info span {
-      display: block;
-      margin-bottom: 8px;
-    }
-
-    footer {
-      text-align: center;
-      padding: 18px;
-      background: #343a40;
-      color: #fff;
-      font-size: 1em;
-      margin-top: 40px;
-    }
-
-    @media (max-width: 600px) {
-      section {
-        padding: 18px 5px;
-      }
-
-      .brand-title {
-        font-size: 1em;
-      }
-
-      .menu-icon,
-      .search-icon {
-        font-size: 20px;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suryadoot Energy Solution - Leading Solar Power Solutions in Narsinghpur</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="logo.jpg" />
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .gradient-bg {
+            background: linear-gradient(135deg, #0f172a 0%, #1e40af 30%, #3b82f6 70%, #60a5fa 100%);
+        }
+        .solar-gradient {
+            background: linear-gradient(135deg, #f59e0b 0%, #f97316 50%, #ea580c 100%);
+        }
+        .hero-pattern {
+            background-image: radial-gradient(circle at 25px 25px, rgba(255,255,255,0.1) 2px, transparent 0);
+            background-size: 50px 50px;
+        }
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+        .animate-pulse-slow {
+            animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            33% { transform: translateY(-20px) rotate(2deg); }
+            66% { transform: translateY(-10px) rotate(-1deg); }
+        }
+        .page-section {
+            display: none;
+            min-height: 100vh;
+        }
+        .page-section.active {
+            display: block;
+        }
+        .nav-link.active {
+            color: #f59e0b;
+            border-bottom: 3px solid #f59e0b;
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+        .stats-counter {
+            font-size: 3rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #3b82f6, #f59e0b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .section-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #e5e7eb, transparent);
+        }
+        .testimonial-card {
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+            border: 1px solid #e2e8f0;
+        }
+        .service-icon {
+            background: linear-gradient(135deg, #dbeafe 0%, #fef3c7 100%);
+        }
+    </style>
 </head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="gradient-bg text-white shadow-2xl fixed w-full top-0 z-50 backdrop-blur-sm">
+        <div class="container mx-auto px-6">
+            <div class="flex justify-between items-center py-5">
+                <div class="flex items-center space-x-4">
+                    <div class="w-14 h-14 rounded-full overflow-hidden shadow-lg bg-white">
+                        <img src="logo.jpg" alt="Suryadoot Energy Solution Logo" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="w-full h-full bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full flex items-center justify-center shadow-lg" style="display: none;">
+                            <i class="fas fa-sun text-white text-2xl animate-pulse-slow"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <h1 class="text-2xl font-bold tracking-tight">Suryadoot Energy Solution</h1>
+                        <p class="text-sm text-blue-200 font-medium">Premium Solar Panel Installer</p>
+                        <p class="text-xs text-blue-300 font-medium">Top 10 Solar Brands Available</p>
+                    </div>
+                </div>
+                
+                <div class="hidden lg:flex space-x-8">
+                    <a href="#" class="nav-link hover:text-yellow-300 transition-all duration-300 px-4 py-2 font-medium" onclick="showPage('home')">Home</a>
+                    <a href="#" class="nav-link hover:text-yellow-300 transition-all duration-300 px-4 py-2 font-medium" onclick="showPage('about')">About Us</a>
+                    <a href="#" class="nav-link hover:text-yellow-300 transition-all duration-300 px-4 py-2 font-medium" onclick="showPage('services')">Services</a>
+                    <a href="#" class="nav-link hover:text-yellow-300 transition-all duration-300 px-4 py-2 font-medium" onclick="showPage('why-choose')">Why Choose Us</a>
+                    <a href="#" class="nav-link hover:text-yellow-300 transition-all duration-300 px-4 py-2 font-medium" onclick="showPage('contact')">Contact</a>
+                </div>
+                
+                <div class="hidden lg:block">
+                    <button onclick="showPage('contact')" class="solar-gradient text-white px-6 py-3 rounded-full font-semibold hover:shadow-xl transform hover:scale-105 transition-all duration-300">
+                        Get Free Quote
+                    </button>
+                </div>
+                
+                <div class="lg:hidden">
+                    <button onclick="toggleMobileMenu()" class="text-white p-2">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobileMenu" class="lg:hidden hidden pb-6">
+                <div class="space-y-3">
+                    <a href="#" class="block py-3 px-4 hover:bg-blue-700 rounded-lg transition-colors" onclick="showPage('home')">Home</a>
+                    <a href="#" class="block py-3 px-4 hover:bg-blue-700 rounded-lg transition-colors" onclick="showPage('about')">About Us</a>
+                    <a href="#" class="block py-3 px-4 hover:bg-blue-700 rounded-lg transition-colors" onclick="showPage('services')">Services</a>
+                    <a href="#" class="block py-3 px-4 hover:bg-blue-700 rounded-lg transition-colors" onclick="showPage('why-choose')">Why Choose Us</a>
+                    <a href="#" class="block py-3 px-4 hover:bg-blue-700 rounded-lg transition-colors" onclick="showPage('contact')">Contact</a>
+                    <button onclick="showPage('contact')" class="w-full mt-4 solar-gradient text-white px-6 py-3 rounded-full font-semibold">
+                        Get Free Quote
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
 
-<body>
+    <!-- Home Page -->
+    <section id="home" class="page-section active pt-20">
+        <!-- Hero Section -->
+        <div class="gradient-bg hero-pattern text-white py-32 relative overflow-hidden">
+            <div class="absolute inset-0 bg-black bg-opacity-20"></div>
+            <div class="container mx-auto px-6 relative z-10">
+                <div class="grid lg:grid-cols-2 gap-16 items-center">
+                    <div class="text-center lg:text-left">
+                        <div class="inline-block mb-6">
+                            <span class="bg-yellow-400 text-gray-900 px-4 py-2 rounded-full text-sm font-semibold">
+                                🌟 Top 10 Solar Brands Available
+                            </span>
+                        </div>
+                        <h1 class="text-5xl lg:text-7xl font-bold mb-8 leading-tight">
+                            Switch to <span class="text-yellow-400">Solar</span><br>
+                            <span class="text-yellow-400">Today!</span>
+                        </h1>
+                        <p class="text-xl lg:text-2xl mb-10 text-blue-100 leading-relaxed">
+                            Transform your energy future with premium solar solutions. Save money, save the planet, and secure energy independence with India's most trusted solar technology.
+                        </p>
+                        
+                        <div class="flex flex-col sm:flex-row gap-6 mb-12">
+                            <button onclick="showPage('contact')" class="solar-gradient text-white px-10 py-5 rounded-full text-lg font-bold hover:shadow-2xl transform hover:scale-105 transition-all duration-300 flex items-center justify-center space-x-3">
+                                <i class="fas fa-calculator"></i>
+                                <span>Get Free Quote Now!</span>
+                            </button>
+                            <button onclick="showPage('services')" class="border-2 border-white text-white px-10 py-5 rounded-full text-lg font-bold hover:bg-white hover:text-blue-900 transition-all duration-300 flex items-center justify-center space-x-3">
+                                <i class="fas fa-play-circle"></i>
+                                <span>Explore Services</span>
+                            </button>
+                        </div>
+                        
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
+                            <div class="bg-white bg-opacity-10 backdrop-blur-sm p-6 rounded-xl">
+                                <i class="fas fa-check-circle text-green-400 text-2xl mb-3"></i>
+                                <div class="font-semibold">Free Site Visit</div>
+                                <div class="text-sm text-blue-200">Professional Assessment</div>
+                            </div>
+                            <div class="bg-white bg-opacity-10 backdrop-blur-sm p-6 rounded-xl">
+                                <i class="fas fa-shield-alt text-green-400 text-2xl mb-3"></i>
+                                <div class="font-semibold">25-Year Warranty</div>
+                                <div class="text-sm text-blue-200">Premium Quality Panels</div>
+                            </div>
+                            <div class="bg-white bg-opacity-10 backdrop-blur-sm p-6 rounded-xl">
+                                <i class="fas fa-piggy-bank text-green-400 text-2xl mb-3"></i>
+                                <div class="font-semibold">Instant Savings</div>
+                                <div class="text-sm text-blue-200">From Day One</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="relative">
+                            <div class="animate-float">
+                                <svg class="w-96 h-96 mx-auto" viewBox="0 0 400 400" fill="none">
+                                    <!-- Solar Panel -->
+                                    <rect x="50" y="100" width="300" height="200" rx="10" fill="#1e40af" stroke="#60a5fa" stroke-width="3"/>
+                                    <g stroke="#60a5fa" stroke-width="2">
+                                        <line x1="50" y1="150" x2="350" y2="150"/>
+                                        <line x1="50" y1="200" x2="350" y2="200"/>
+                                        <line x1="50" y1="250" x2="350" y2="250"/>
+                                        <line x1="150" y1="100" x2="150" y2="300"/>
+                                        <line x1="250" y1="100" x2="250" y2="300"/>
+                                    </g>
+                                    <!-- Sun -->
+                                    <circle cx="320" cy="80" r="30" fill="#fbbf24" class="animate-pulse-slow"/>
+                                    <g stroke="#fbbf24" stroke-width="3" stroke-linecap="round">
+                                        <line x1="320" y1="30" x2="320" y2="40"/>
+                                        <line x1="320" y1="120" x2="320" y2="130"/>
+                                        <line x1="270" y1="80" x2="280" y2="80"/>
+                                        <line x1="360" y1="80" x2="370" y2="80"/>
+                                        <line x1="285" y1="45" x2="292" y2="52"/>
+                                        <line x1="348" y1="108" x2="355" y2="115"/>
+                                        <line x1="355" y1="45" x2="348" y2="52"/>
+                                        <line x1="292" y1="108" x2="285" y2="115"/>
+                                    </g>
+                                    <!-- Energy waves -->
+                                    <path d="M320 80 L200 200" stroke="#fbbf24" stroke-width="3" stroke-dasharray="5,5" class="animate-pulse"/>
+                                    <path d="M310 90 L190 210" stroke="#fbbf24" stroke-width="2" stroke-dasharray="3,3" class="animate-pulse"/>
+                                    <path d="M330 70 L210 190" stroke="#fbbf24" stroke-width="2" stroke-dasharray="3,3" class="animate-pulse"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-  <!-- New Header -->
-  <header class="custom-header">
-    <div class="menu-icon">☰</div>
+        <!-- Stats Section -->
+        <div class="bg-white py-20">
+            <div class="container mx-auto px-6">
+                <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+                    <div class="p-8">
+                        <div class="stats-counter mb-4">500+</div>
+                        <div class="text-gray-600 font-semibold">Happy Customers</div>
+                        <div class="text-sm text-gray-500">Across Central India</div>
+                    </div>
+                    <div class="p-8">
+                        <div class="stats-counter mb-4">25+</div>
+                        <div class="text-gray-600 font-semibold">Years Experience</div>
+                        <div class="text-sm text-gray-500">In Solar Industry</div>
+                    </div>
+                    <div class="p-8">
+                        <div class="stats-counter mb-4">5MW+</div>
+                        <div class="text-gray-600 font-semibold">Installed Capacity</div>
+                        <div class="text-sm text-gray-500">Clean Energy Generated</div>
+                    </div>
+                    <div class="p-8">
+                        <div class="stats-counter mb-4">24/7</div>
+                        <div class="text-gray-600 font-semibold">Support Available</div>
+                        <div class="text-sm text-gray-500">Customer Service</div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-    <div class="logo-container">
-      <img src="logo.jpg" alt="Suryadoot Logo" class="logo" />
-      <div class="brand-text">
-        <span class="brand-title">Suryadoot Energy Solution</span><br>
-        <span class="brand-subtitle">Powering the Future with the Sun</span>
-      </div>
-    </div>
+        <!-- Top Solar Brands -->
+        <div class="bg-gradient-to-r from-blue-50 to-orange-50 py-24">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl lg:text-5xl font-bold text-gray-800 mb-6">Top 10 Solar Brands We Install</h2>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">We work with India's leading solar panel manufacturers to bring you the best quality and performance for your investment.</p>
+                </div>
+                
+                <div class="bg-white p-12 rounded-3xl shadow-2xl max-w-6xl mx-auto">
+                    <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
+                        <!-- Tata Power Solar -->
+                        <div class="text-center p-6 bg-gradient-to-b from-blue-50 to-white rounded-xl hover:shadow-lg transition-shadow">
+                            <h4 class="font-bold text-gray-800 text-lg mb-2">Tata Power Solar</h4>
+                            <p class="text-sm text-gray-500">Premium Quality</p>
+                        </div>
 
-    <div class="search-icon">🔍</div>
-  </header>
+                        <!-- Adani Solar -->
+                        <div class="text-center p-6 bg-gradient-to-b from-green-50 to-white rounded-xl hover:shadow-lg transition-shadow">
+                            <h4 class="font-bold text-gray-800 text-lg mb-2">Adani Solar</h4>
+                            <p class="text-sm text-gray-500">Tier-1 Manufacturer</p>
+                        </div>
 
-  <section>
-    <h2>About Us</h2>
-    <p>
-      At Suryadoot Energy Solution, we specialize in designing, installing, and maintaining
-      <b>On-Grid Solar Power Systems</b> for residential, commercial, and industrial clients.
-      With a commitment to clean energy and sustainable growth, we help you reduce electricity bills while contributing to a greener planet.
-    </p>
-    <p>
-      Our team of experts ensures that each solar project is tailored to your needs, budget, and power consumption pattern — delivering efficiency, performance, and peace of mind.
-    </p>
-  </section>
+                        <!-- Servotech -->
+                        <div class="text-center p-6 bg-gradient-to-b from-orange-50 to-white rounded-xl hover:shadow-lg transition-shadow">
+                            <h4 class="font-bold text-gray-800 text-lg mb-2">Servotech</h4>
+                            <p class="text-sm text-gray-500">Renewable Power</p>
+                        </div>
 
-  <section>
-    <h2>⚡ Our Services</h2>
-    <ul class="services-list">
-      <li><span class="icon">🔌</span><b>On-Grid Solar System Installation</b><br>
-        High-efficiency grid-tied solar systems for homes, offices, industries, and institutions.</li>
-      <li><span class="icon">📐</span><b>Site Survey & System Design</b><br>
-        Technical site assessment and customized system design for maximum output.</li>
-      <li><span class="icon">💸</span><b>Government Subsidy Assistance</b><br>
-        Help in availing MNRE-approved subsidies and net-metering documentation.</li>
-      <li><span class="icon">🔧</span><b>Solar Panel Supply & Mounting</b><br>
-        Premium solar panels, inverters, and mounting structures from trusted manufacturers.</li>
-      <li><span class="icon">🛠️</span><b>System Commissioning & AMC</b><br>
-        Timely commissioning and post-installation support with Annual Maintenance Contracts.</li>
-    </ul>
-  </section>
+                        <!-- Waaree Energies -->
+                        <div class="text-center p-6 bg-gradient-to-b from-purple-50 to-white rounded-xl hover:shadow-lg transition-shadow">
+                            <h4 class="font-bold text-gray-800 text-lg mb-2">Waaree Energies</h4>
+                            <p class="text-sm text-gray-500">Leading Brand</p>
+                        </div>
 
-  <section>
-    <h2>☀️ Why Choose Us?</h2>
-    <ul class="why-list">
-      <li>✅ Experienced Solar Professionals</li>
-      <li>✅ High-Quality Equipment</li>
-      <li>✅ End-to-End Project Execution</li>
-      <li>✅ Competitive Pricing</li>
-      <li>✅ Fast Installation & Reliable Support</li>
-      <li>✅ MNRE & DISCOM Approved Vendor</li>
-    </ul>
-  </section>
+                        <!-- Vikram Solar -->
+                        <div class="text-center p-6 bg-gradient-to-b from-red-50 to-white rounded-xl hover:shadow-lg transition-shadow">
+                            <h4 class="font-bold text-gray-800 text-lg mb-2">Vikram Solar</h4>
+                            <p class="text-sm text-gray-500">High Efficiency</p>
+                        </div>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
+                        <!-- Goldi Solar -->
+                        <div class="text-center p-6 bg-gradient-to-b from-yellow-50 to-white rounded-xl hover:shadow-lg transition-shadow">
+                            <h4 class="font-bold text-gray-800 text-lg mb-2">Goldi Solar</h4>
+                            <p class="text-sm text-gray-500">Cost Effective</p>
+                        </div>
 
-  <section>
-    <h2>🔋 What is an On-Grid Solar System?</h2>
-    <p>
-      An on-grid solar system is connected to the utility grid. It generates solar electricity during the day, powering your appliances directly and feeding excess energy to the grid. You get credited for this power, effectively lowering your electricity bill.
-    </p>
-    <p>
-      It’s the most cost-effective and popular solar solution for urban areas with stable grid availability.
-    </p>
-  </section>
+                        <!-- Saatvik Green Energy -->
+                        <div class="text-center p-6 bg-gradient-to-b from-indigo-50 to-white rounded-xl hover:shadow-lg transition-shadow">
+                            <h4 class="font-bold text-gray-800 text-lg mb-2">Saatvik Green</h4>
+                            <p class="text-sm text-gray-500">Eco-Friendly</p>
+                        </div>
 
-  <section>
-    <h2>💬 Client Testimonials</h2>
-    <div class="testimonials">
-      <div class="testimonial">
-        "Suryadoot helped us install a 3kW on-grid system for our factory. The savings on power bills are incredible!"
-        <span>– Rajesh M., Kareli</span>
-      </div>
-      <div class="testimonial">
-        "Professional, fast, and knowledgeable team. Highly recommended for solar rooftop projects."
-        <span>– Priya T., Narsinghpur</span>
-      </div>
-    </div>
-  </section>
+                        <!-- Renewsys India -->
+                        <div class="text-center p-6 bg-gradient-to-b from-pink-50 to-white rounded-xl hover:shadow-lg transition-shadow">
+                            <h4 class="font-bold text-gray-800 text-lg mb-2">Renewsys India</h4>
+                            <p class="text-sm text-gray-500">Innovation Leader</p>
+                        </div>
 
-  <section>
-    <h2>📞 Get in Touch</h2>
-    <div class="contact-info">
-      <span>Ready to go solar?</span>
-      <span>📱 <b>Call Us:</b> +91-8989933932</span>
-      <span>📧 <b>Email:</b> suryadoot.energy@gmail.com</span>
-      <span>📍 <b>Location:</b> [Your Office Address]</span>
-      <ul class="contact-list">
-        <li>✅ Free Site Visit</li>
-        <li>✅ 25-Year Panel Warranty</li>
-        <li>✅ Start Saving from Day One</li>
-      </ul>
-    </div>
-    <br>
-    <h3>Contact / Enquiry Form</h3>
-    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdQ_qtqYgMvOsKVhnGrcbhT8jOEen344KjnJM5K6C3G3f5XsQ/viewform?embedded=true"
-      width="100%" height="750" frameborder="0" marginheight="0" marginwidth="0">
-      Loading…
-    </iframe>
-  </section>
+                        <!-- Loom Solar -->
+                        <div class="text-center p-6 bg-gradient-to-b from-teal-50 to-white rounded-xl hover:shadow-lg transition-shadow">
+                            <h4 class="font-bold text-gray-800 text-lg mb-2">Loom Solar</h4>
+                            <p class="text-sm text-gray-500">Modern Technology</p>
+                        </div>
 
-  <footer>
-    &copy; 2025 Suryadoot Energy Solution | Email: suryadoot.energy@gmail.com
-  </footer>
+                        <!-- Patanjali Solar -->
+                        <div class="text-center p-6 bg-gradient-to-b from-amber-50 to-white rounded-xl hover:shadow-lg transition-shadow">
+                            <h4 class="font-bold text-gray-800 text-lg mb-2">Patanjali Solar</h4>
+                            <p class="text-sm text-gray-500">Trusted Brand</p>
+                        </div>
+                    </div>
+                    
+                    <div class="grid lg:grid-cols-2 gap-12 items-center">
+                        <div>
+                            <h3 class="text-2xl font-bold text-gray-800 mb-4">Why Multiple Brands?</h3>
+                            <ul class="space-y-3 text-gray-600">
+                                <li class="flex items-center space-x-3">
+                                    <i class="fas fa-check-circle text-green-500"></i>
+                                    <span>Best price options for every budget</span>
+                                </li>
+                                <li class="flex items-center space-x-3">
+                                    <i class="fas fa-check-circle text-green-500"></i>
+                                    <span>Latest technology from top manufacturers</span>
+                                </li>
+                                <li class="flex items-center space-x-3">
+                                    <i class="fas fa-check-circle text-green-500"></i>
+                                    <span>Customized solutions for specific needs</span>
+                                </li>
+                                <li class="flex items-center space-x-3">
+                                    <i class="fas fa-check-circle text-green-500"></i>
+                                    <span>Competitive warranties and support</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="text-center">
+                            <div class="bg-gradient-to-r from-blue-100 to-orange-100 p-8 rounded-2xl">
+                                <i class="fas fa-award text-6xl text-blue-600 mb-6"></i>
+                                <h4 class="text-xl font-bold text-gray-800 mb-4">Quality Assured</h4>
+                                <p class="text-gray-600">All brands we install are Tier-1 manufacturers with international certifications and proven track records in the Indian market.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-</body>
-</html>
+        <!-- Services Preview -->
+        <div class="bg-white py-24">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl lg:text-5xl font-bold text-gray-800 mb-6">Complete Solar Solutions</h2>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">From consultation to installation and maintenance, we provide end-to-end solar energy solutions tailored to your specific needs.</p>
+                </div>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="card-hover bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
+                        <div class="service-icon w-16 h-16 rounded-2xl flex items-center justify-center mb-6">
+                            <i class="fas fa-home text-3xl text-blue-600"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4">Residential Solar</h3>
+                        <p class="text-gray-600 mb-6">Complete on-grid solar systems for homes. Reduce electricity bills by up to 90% and earn from excess power generation.</p>
+                        <ul class="text-sm text-gray-500 space-y-2 mb-6">
+                            <li>• 1kW to 10kW systems available</li>
+                            <li>• Net metering facility</li>
+                            <li>• Government subsidy assistance</li>
+                            <li>• 25-year performance warranty</li>
+                        </ul>
+                        <button onclick="showPage('services')" class="text-blue-600 font-semibold hover:text-blue-800 transition-colors">
+                            Learn More <i class="fas fa-arrow-right ml-2"></i>
+                        </button>
+                    </div>
+
+                    <div class="card-hover bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
+                        <div class="service-icon w-16 h-16 rounded-2xl flex items-center justify-center mb-6">
+                            <i class="fas fa-building text-3xl text-green-600"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4">Commercial Solar</h3>
+                        <p class="text-gray-600 mb-6">Large-scale solar installations for businesses, industries, and institutions. Maximize ROI with professional solutions.</p>
+                        <ul class="text-sm text-gray-500 space-y-2 mb-6">
+                            <li>• 10kW to 1MW+ systems</li>
+                            <li>• Custom design & engineering</li>
+                            <li>• Power purchase agreements</li>
+                            <li>• Comprehensive O&M services</li>
+                        </ul>
+                        <button onclick="showPage('services')" class="text-green-600 font-semibold hover:text-green-800 transition-colors">
+                            Learn More <i class="fas fa-arrow-right ml-2"></i>
+                        </button>
+                    </div>
+
+                    <div class="card-hover bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
+                        <div class="service-icon w-16 h-16 rounded-2xl flex items-center justify-center mb-6">
+                            <i class="fas fa-tractor text-3xl text-orange-600"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4">Agricultural Solar</h3>
+                        <p class="text-gray-600 mb-6">Solar-powered water pumping solutions for irrigation. Reduce farming costs and increase agricultural productivity.</p>
+                        <ul class="text-sm text-gray-500 space-y-2 mb-6">
+                            <li>• 1HP to 25HP solar pumps</li>
+                            <li>• Submersible & surface pumps</li>
+                            <li>• Up to 90% government subsidy</li>
+                            <li>• 5-year comprehensive warranty</li>
+                        </ul>
+                        <button onclick="showPage('services')" class="text-orange-600 font-semibold hover:text-orange-800 transition-colors">
+                            Learn More <i class="fas fa-arrow-right ml-2"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Testimonials -->
+        <div class="bg-gray-50 py-24">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl lg:text-5xl font-bold text-gray-800 mb-6">What Our Customers Say</h2>
+                    <p class="text-xl text-gray-600">Real experiences from satisfied customers across Narsinghpur and beyond.</p>
+                </div>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="testimonial-card p-8 rounded-2xl shadow-lg">
+                        <div class="flex items-center mb-6">
+                            <div class="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center text-white font-bold text-lg">R</div>
+                            <div class="ml-4">
+                                <div class="font-semibold text-gray-800">Rajesh Kumar</div>
+                                <div class="text-sm text-gray-500">Homeowner, Narsinghpur</div>
+                            </div>
+                        </div>
+                        <div class="flex text-yellow-400 mb-4">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="text-gray-600 italic">"Excellent service from Suryadoot Energy! My electricity bill has reduced by 85% after installing their 5kW solar system. Uday ji and his team are very professional and supportive."</p>
+                    </div>
+
+                    <div class="testimonial-card p-8 rounded-2xl shadow-lg">
+                        <div class="flex items-center mb-6">
+                            <div class="w-12 h-12 bg-gradient-to-r from-green-500 to-blue-500 rounded-full flex items-center justify-center text-white font-bold text-lg">S</div>
+                            <div class="ml-4">
+                                <div class="font-semibold text-gray-800">Suresh Patel</div>
+                                <div class="text-sm text-gray-500">Farmer, Gadarwara</div>
+                            </div>
+                        </div>
+                        <div class="flex text-yellow-400 mb-4">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="text-gray-600 italic">"Solar pump installation was smooth and quick. No more diesel costs for irrigation! The government subsidy process was handled perfectly by their team. Highly recommended."</p>
+                    </div>
+
+                    <div class="testimonial-card p-8 rounded-2xl shadow-lg">
+                        <div class="flex items-center mb-6">
+                            <div class="w-12 h-12 bg-gradient-to-r from-orange-500 to-red-500 rounded-full flex items-center justify-center text-white font-bold text-lg">A</div>
+                            <div class="ml-4">
+                                <div class="font-semibold text-gray-800">Amit Sharma</div>
+                                <div class="text-sm text-gray-500">Business Owner, Kareli</div>
+                            </div>
+                        </div>
+                        <div class="flex text-yellow-400 mb-4">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="text-gray-600 italic">"Installed 50kW system for my factory. ROI achieved in just 3.5 years! Quality of Adani panels is excellent and their after-sales service is outstanding. Very satisfied with the investment."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA Section -->
+        <div class="gradient-bg py-24">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-4xl lg:text-5xl font-bold text-white mb-8">Ready to Go Solar?</h2>
+                <p class="text-xl text-blue-100 mb-12 max-w-3xl mx-auto">Join thousands of satisfied customers who have made the smart switch to solar energy. Get your free consultation today and start saving immediately.</p>
+                
+                <div class="flex flex-col sm:flex-row gap-6 justify-center items-center mb-12">
+                    <button onclick="showPage('contact')" class="solar-gradient text-white px-10 py-5 rounded-full text-lg font-bold hover:shadow-2xl transform hover:scale-105 transition-all duration-300 flex items-center space-x-3">
+                        <i class="fas fa-phone"></i>
+                        <span>Call +91 8989933932</span>
+                    </button>
+                    <button onclick="showPage('contact')" class="border-2 border-white text-white px-10 py-5 rounded-full text-lg font-bold hover:bg-white hover:text-blue-900 transition-all duration-300 flex items-center space-x-3">
+                        <i class="fas fa-envelope"></i>
+                        <span>Get Free Quote</span>
+                    </button>
+                </div>
+                
+                <div class="text-blue-100">
+                    <p class="mb-2">📍 Shop no. 3, 1st floor, Nagar Palika Complex, Near Vardaan Hotel</p>
+                    <p>Narsinghpur 487001, Madhya Pradesh</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Page -->
+    <section id="about" class="page-section pt-24">
+        <div class="container mx-auto px-6 py-16">
+            <!-- Hero Section -->
+            <div class="text-center mb-20">
+                <h1 class="text-5xl lg:text-6xl font-bold text-gray-800 mb-8">About Suryadoot Energy Solution</h1>
+                <p class="text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed">Pioneering the solar revolution in Central India with cutting-edge technology, unmatched expertise, and unwavering commitment to sustainable energy solutions.</p>
+            </div>
+
+            <!-- Company Story -->
+            <div class="grid lg:grid-cols-2 gap-16 items-center mb-24">
+                <div>
+                    <h2 class="text-4xl font-bold text-gray-800 mb-8">Our Journey</h2>
+                    <div class="space-y-6 text-lg text-gray-600 leading-relaxed">
+                        <p>Founded with a vision to democratize clean energy access, Suryadoot Energy Solution has emerged as the leading solar energy provider in Narsinghpur and surrounding regions. Our journey began with a simple yet powerful mission: to make solar energy accessible, affordable, and reliable for every home and business.</p>
+                        
+                        <p>As an authorized distributor of Adani Solar, we bring you the perfect combination of world-class technology and local expertise. Our deep understanding of regional energy needs, coupled with premium solar solutions, has helped us build lasting relationships with over 500 satisfied customers.</p>
+                        
+                        <p>From humble beginnings to becoming the most trusted name in solar energy, our growth story is built on the foundation of quality, integrity, and customer satisfaction. Every installation we complete brings us closer to our vision of a sustainable energy future for Central India.</p>
+                    </div>
+                </div>
+                
+                <div class="relative">
+                    <div class="bg-gradient-to-r from-blue-100 to-orange-100 p-12 rounded-3xl">
+                        <div class="text-center">
+                            <div class="w-32 h-32 bg-gradient-to-r from-blue-600 to-orange-500 rounded-full mx-auto mb-8 flex items-center justify-center shadow-2xl">
+                                <i class="fas fa-user-tie text-5xl text-white"></i>
+                            </div>
+                            <h3 class="text-3xl font-bold text-gray-800 mb-4">Uday Raj Patel</h3>
+                            <p class="text-xl text-gray-600 mb-6">Founder & Managing Director</p>
+                            <div class="bg-white p-6 rounded-2xl shadow-lg">
+                                <p class="text-gray-700 italic">"Our mission is to power every home and business with clean, sustainable energy while creating a greener tomorrow for our children."</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Vision & Mission -->
+            <div class="grid lg:grid-cols-2 gap-12 mb-24">
+                <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-12 rounded-3xl shadow-xl">
+                    <div class="text-center mb-8">
+                        <div class="w-20 h-20 bg-blue-600 rounded-full mx-auto flex items-center justify-center mb-6">
+                            <i class="fas fa-eye text-3xl text-white"></i>
+                        </div>
+                        <h3 class="text-3xl font-bold text-blue-800 mb-6">Our Vision</h3>
+                    </div>
+                    <p class="text-lg text-gray-700 leading-relaxed text-center">
+                        To be the leading catalyst in Central India's transition to renewable energy, making solar power the primary energy source for every home, business, and community while contributing to a sustainable and carbon-neutral future.
+                    </p>
+                    <div class="mt-8 grid grid-cols-2 gap-4 text-center">
+                        <div class="bg-white p-4 rounded-xl">
+                            <div class="text-2xl font-bold text-blue-600">2030</div>
+                            <div class="text-sm text-gray-600">Carbon Neutral Goal</div>
+                        </div>
+                        <div class="bg-white p-4 rounded-xl">
+                            <div class="text-2xl font-bold text-blue-600">10MW+</div>
+                            <div class="text-sm text-gray-600">Target Capacity</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-gradient-to-br from-orange-50 to-orange-100 p-12 rounded-3xl shadow-xl">
+                    <div class="text-center mb-8">
+                        <div class="w-20 h-20 bg-orange-600 rounded-full mx-auto flex items-center justify-center mb-6">
+                            <i class="fas fa-bullseye text-3xl text-white"></i>
+                        </div>
+                        <h3 class="text-3xl font-bold text-orange-800 mb-6">Our Mission</h3>
+                    </div>
+                    <p class="text-lg text-gray-700 leading-relaxed text-center mb-8">
+                        To provide reliable, efficient, and cost-effective solar energy solutions through premium products, expert installation, and exceptional customer service, empowering our clients to reduce their environmental impact while achieving significant energy savings.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4 text-center">
+                        <div class="bg-white p-4 rounded-xl">
+                            <div class="text-2xl font-bold text-orange-600">500+</div>
+                            <div class="text-sm text-gray-600">Happy Customers</div>
+                        </div>
+                        <div class="bg-white p-4 rounded-xl">
+                            <div class="text-2xl font-bold text-orange-600">5MW+</div>
+                            <div class="text-sm text-gray-600">Installed Capacity</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Core Values -->
+            <div class="bg-white py-16">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold text-gray-800 mb-6">Our Core Values</h2>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">The principles that guide every decision we make and every service we provide.</p>
+                </div>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="text-center p-8 bg-gradient-to-b from-blue-50 to-white rounded-2xl shadow-lg">
+                        <div class="w-16 h-16 bg-blue-600 rounded-full mx-auto mb-6 flex items-center justify-center">
+                            <i class="fas fa-award text-2xl text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-4">Quality Excellence</h3>
+                        <p class="text-gray-600">We never compromise on quality, using only premium components and following industry best practices in every installation.</p>
+                    </div>
+                    
+                    <div class="text-center p-8 bg-gradient-to-b from-green-50 to-white rounded-2xl shadow-lg">
+                        <div class="w-16 h-16 bg-green-600 rounded-full mx-auto mb-6 flex items-center justify-center">
+                            <i class="fas fa-handshake text-2xl text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-4">Customer First</h3>
+                        <p class="text-gray-600">Our customers' success is our success. We go above and beyond to ensure complete satisfaction and long-term relationships.</p>
+                    </div>
+                    
+                    <div class="text-center p-8 bg-gradient-to-b from-orange-50 to-white rounded-2xl shadow-lg">
+                        <div class="w-16 h-16 bg-orange-600 rounded-full mx-auto mb-6 flex items-center justify-center">
+                            <i class="fas fa-leaf text-2xl text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-4">Sustainability</h3>
+                        <p class="text-gray-600">Environmental responsibility drives everything we do. We're committed to creating a cleaner, greener future for generations to come.</p>
+                    </div>
+                    
+                    <div class="text-center p-8 bg-gradient-to-b from-purple-50 to-white rounded-2xl shadow-lg">
+                        <div class="w-16 h-16 bg-purple-600 rounded-full mx-auto mb-6 flex items-center justify-center">
+                            <i class="fas fa-lightbulb text-2xl text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-4">Innovation</h3>
+                        <p class="text-gray-600">We continuously adopt the latest technologies and innovative solutions to provide our customers with the most efficient solar systems.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Team & Expertise -->
+            <div class="bg-gray-50 py-16 rounded-3xl mt-16">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold text-gray-800 mb-6">Our Expertise</h2>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">Backed by years of experience and continuous learning, our team brings unmatched expertise to every project.</p>
+                </div>
+                
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="text-center">
+                        <div class="w-24 h-24 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full mx-auto mb-6 flex items-center justify-center">
+                            <i class="fas fa-tools text-3xl text-white"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4">Technical Excellence</h3>
+                        <p class="text-gray-600">Our certified engineers and technicians ensure every installation meets the highest technical standards and safety requirements.</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="w-24 h-24 bg-gradient-to-r from-green-500 to-blue-500 rounded-full mx-auto mb-6 flex items-center justify-center">
+                            <i class="fas fa-chart-line text-3xl text-white"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4">Performance Optimization</h3>
+                        <p class="text-gray-600">We design and optimize every system for maximum energy generation and return on investment, tailored to your specific needs.</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="w-24 h-24 bg-gradient-to-r from-orange-500 to-red-500 rounded-full mx-auto mb-6 flex items-center justify-center">
+                            <i class="fas fa-headset text-3xl text-white"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4">Ongoing Support</h3>
+                        <p class="text-gray-600">Our commitment doesn't end with installation. We provide comprehensive maintenance and support services for the life of your system.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Page -->
+    <section id="services" class="page-section pt-24">
+        <div class="container mx-auto px-6 py-16">
+            <!-- Hero Section -->
+            <div class="text-center mb-20">
+                <h1 class="text-5xl lg:text-6xl font-bold text-gray-800 mb-8">Complete Solar Solutions</h1>
+                <p class="text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed">From initial consultation to long-term maintenance, we provide comprehensive solar energy services designed to maximize your investment and minimize your environmental impact.</p>
+            </div>
+
+            <!-- Main Services Grid -->
+            <div class="grid lg:grid-cols-2 gap-12 mb-20">
+                <!-- On-Grid Solar Systems -->
+                <div class="bg-white rounded-3xl shadow-2xl overflow-hidden">
+                    <div class="bg-gradient-to-r from-blue-500 to-blue-700 p-8 text-white">
+                        <div class="flex items-center space-x-4 mb-6">
+                            <div class="w-16 h-16 bg-white bg-opacity-20 rounded-2xl flex items-center justify-center">
+                                <i class="fas fa-solar-panel text-3xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-3xl font-bold">On-Grid Solar Systems</h3>
+                                <p class="text-blue-100">Grid-Tied Solar Solutions</p>
+                            </div>
+                        </div>
+                        <p class="text-xl text-blue-100">Complete grid-connected solar systems for homes and businesses. Generate your own electricity, reduce bills, and earn from excess power.</p>
+                    </div>
+                    <div class="p-8">
+                        <div class="grid md:grid-cols-2 gap-6 mb-8">
+                            <div>
+                                <h4 class="font-bold text-gray-800 mb-3">Residential Systems</h4>
+                                <ul class="space-y-2 text-gray-600">
+                                    <li>• 1kW to 10kW capacity</li>
+                                    <li>• Rooftop installations</li>
+                                    <li>• Net metering facility</li>
+                                    <li>• 25-year warranty</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800 mb-3">Commercial Systems</h4>
+                                <ul class="space-y-2 text-gray-600">
+                                    <li>• 10kW to 1MW+ capacity</li>
+                                    <li>• Ground & rooftop mounting</li>
+                                    <li>• Power purchase agreements</li>
+                                    <li>• Custom engineering</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="bg-blue-50 p-6 rounded-2xl mb-6">
+                            <h4 class="font-bold text-blue-800 mb-3">Key Benefits</h4>
+                            <div class="grid grid-cols-2 gap-4 text-sm">
+                                <div class="flex items-center space-x-2">
+                                    <i class="fas fa-check-circle text-green-500"></i>
+                                    <span>Up to 90% bill reduction</span>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <i class="fas fa-check-circle text-green-500"></i>
+                                    <span>Earn from excess power</span>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <i class="fas fa-check-circle text-green-500"></i>
+                                    <span>3-5 year payback period</span>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <i class="fas fa-check-circle text-green-500"></i>
+                                    <span>Increase property value</span>
+                                </div>
+                            </div>
+                        </div>
+                        <button onclick="showPage('contact')" class="w-full bg-blue-600 text-white py-4 rounded-xl font-semibold hover:bg-blue-700 transition-colors">
+                            Get Quote for On-Grid System
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Agricultural Solar Pumps -->
+                <div class="bg-white rounded-3xl shadow-2xl overflow-hidden">
+                    <div class="bg-gradient-to-r from-green-500 to-green-700 p-8 text-white">
+                        <div class="flex items-center space-x-4 mb-6">
+                            <div class="w-16 h-16 bg-white bg-opacity-20 rounded-2xl flex items-center justify-center">
+                                <i class="fas fa-tractor text-3xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-3xl font-bold">Agricultural Solar Pumps</h3>
+                                <p class="text-green-100">Solar Water Pumping Solutions</p>
+                            </div>
+                        </div>
+                        <p class="text-xl text-green-100">Efficient solar-powered irrigation systems for farmers. Eliminate diesel costs and ensure reliable water supply for crops.</p>
+                    </div>
+                    <div class="p-8">
+                        <div class="grid md:grid-cols-2 gap-6 mb-8">
+                            <div>
+                                <h4 class="font-bold text-gray-800 mb-3">Submersible Pumps</h4>
+                                <ul class="space-y-2 text-gray-600">
+                                    <li>• 1HP to 25HP capacity</li>
+                                    <li>• Up to 200m depth</li>
+                                    <li>• High efficiency motors</li>
+                                    <li>• MPPT controllers</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800 mb-3">Surface Pumps</h4>
+                                <ul class="space-y-2 text-gray-600">
+                                    <li>• 0.5HP to 10HP capacity</li>
+                                    <li>• Centrifugal & monoblock</li>
+                                    <li>• Easy maintenance</li>
+                                    <li>• Weather protection</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="bg-green-50 p-6 rounded-2xl mb-6">
+                            <h4 class="font-bold text-green-800 mb-3">Government Subsidy</h4>
+                            <div class="grid grid-cols-2 gap-4 text-sm">
+                                <div class="flex items-center space-x-2">
+                                    <i class="fas fa-percentage text-green-500"></i>
+                                    <span>Up to 90% subsidy</span>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <i class="fas fa-file-alt text-green-500"></i>
+                                    <span>Complete documentation</span>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <i class="fas fa-clock text-green-500"></i>
+                                    <span>Quick approval process</span>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <i class="fas fa-handshake text-green-500"></i>
+                                    <span>End-to-end support</span>
+                                </div>
+                            </div>
+                        </div>
+                        <button onclick="showPage('contact')" class="w-full bg-green-600 text-white py-4 rounded-xl font-semibold hover:bg-green-700 transition-colors">
+                            Get Quote for Solar Pump
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Additional Services -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fas fa-search text-3xl text-purple-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Site Survey & Design</h3>
+                    <p class="text-gray-600 mb-6">Professional site assessment and custom system design for optimal performance.</p>
+                    <ul class="text-sm text-gray-500 space-y-2">
+                        <li>• Free site evaluation</li>
+                        <li>• Shadow analysis</li>
+                        <li>• 3D system modeling</li>
+                        <li>• Performance simulation</li>
+                        <li>• Custom proposals</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="w-16 h-16 bg-yellow-100 rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fas fa-file-alt text-3xl text-yellow-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Subsidy Assistance</h3>
+                    <p class="text-gray-600 mb-6">Complete support for government subsidy applications and approvals.</p>
+                    <ul class="text-sm text-gray-500 space-y-2">
+                        <li>• Documentation support</li>
+                        <li>• Application processing</li>
+                        <li>• Follow-up with authorities</li>
+                        <li>• Subsidy claim assistance</li>
+                        <li>• Compliance management</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="w-16 h-16 bg-red-100 rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fas fa-shipping-fast text-3xl text-red-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Supply & Installation</h3>
+                    <p class="text-gray-600 mb-6">Premium quality components with professional installation services.</p>
+                    <ul class="text-sm text-gray-500 space-y-2">
+                        <li>• Adani solar panels</li>
+                        <li>• Quality inverters</li>
+                        <li>• Robust mounting systems</li>
+                        <li>• Professional installation</li>
+                        <li>• Safety compliance</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="w-16 h-16 bg-indigo-100 rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fas fa-tools text-3xl text-indigo-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">O&M Services</h3>
+                    <p class="text-gray-600 mb-6">Comprehensive operation and maintenance for optimal system performance.</p>
+                    <ul class="text-sm text-gray-500 space-y-2">
+                        <li>• System commissioning</li>
+                        <li>• Performance monitoring</li>
+                        <li>• Preventive maintenance</li>
+                        <li>• Annual contracts</li>
+                        <li>• 24/7 support</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Process Flow -->
+            <div class="bg-gradient-to-r from-blue-50 to-orange-50 p-12 rounded-3xl">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold text-gray-800 mb-6">Our Installation Process</h2>
+                    <p class="text-xl text-gray-600">A streamlined, professional approach ensuring quality and efficiency at every step.</p>
+                </div>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-8">
+                    <div class="text-center">
+                        <div class="w-20 h-20 bg-blue-600 rounded-full mx-auto mb-6 flex items-center justify-center text-white text-2xl font-bold">1</div>
+                        <h3 class="text-lg font-bold text-gray-800 mb-3">Site Survey</h3>
+                        <p class="text-gray-600 text-sm">Free professional assessment of your property and energy requirements.</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="w-20 h-20 bg-green-600 rounded-full mx-auto mb-6 flex items-center justify-center text-white text-2xl font-bold">2</div>
+                        <h3 class="text-lg font-bold text-gray-800 mb-3">System Design</h3>
+                        <p class="text-gray-600 text-sm">Custom system design and detailed proposal with ROI calculations.</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="w-20 h-20 bg-orange-600 rounded-full mx-auto mb-6 flex items-center justify-center text-white text-2xl font-bold">3</div>
+                        <h3 class="text-lg font-bold text-gray-800 mb-3">Approvals</h3>
+                        <p class="text-gray-600 text-sm">Handle all permits, approvals, and subsidy applications on your behalf.</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="w-20 h-20 bg-purple-600 rounded-full mx-auto mb-6 flex items-center justify-center text-white text-2xl font-bold">4</div>
+                        <h3 class="text-lg font-bold text-gray-800 mb-3">Installation</h3>
+                        <p class="text-gray-600 text-sm">Professional installation by certified technicians with safety compliance.</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="w-20 h-20 bg-red-600 rounded-full mx-auto mb-6 flex items-center justify-center text-white text-2xl font-bold">5</div>
+                        <h3 class="text-lg font-bold text-gray-800 mb-3">Commissioning</h3>
+                        <p class="text-gray-600 text-sm">System testing, grid connection, and performance optimization.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Page -->
+    <section id="why-choose" class="page-section pt-24">
+        <div class="container mx-auto px-6 py-16">
+            <!-- Hero Section -->
+            <div class="text-center mb-20">
+                <h1 class="text-5xl lg:text-6xl font-bold text-gray-800 mb-8">Why Choose Suryadoot Energy?</h1>
+                <p class="text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed">Discover what makes us the most trusted solar energy partner in Central India. Our commitment to excellence, quality, and customer satisfaction sets us apart.</p>
+            </div>
+
+            <!-- Key Differentiators -->
+            <div class="grid lg:grid-cols-3 gap-12 mb-24">
+                <div class="bg-white p-10 rounded-3xl shadow-2xl">
+                    <div class="text-center mb-8">
+                        <div class="w-20 h-20 bg-gradient-to-r from-blue-500 to-blue-700 rounded-full mx-auto mb-6 flex items-center justify-center">
+                            <i class="fas fa-award text-3xl text-white"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800">Top 10 Solar Brands</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-check-circle text-green-500"></i>
+                            <span class="text-gray-600">Access to India's top solar manufacturers</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-check-circle text-green-500"></i>
+                            <span class="text-gray-600">Authentic products with manufacturer warranties</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-check-circle text-green-500"></i>
+                            <span class="text-gray-600">Best price options for every budget</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-check-circle text-green-500"></i>
+                            <span class="text-gray-600">Latest technology from multiple brands</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-10 rounded-3xl shadow-2xl">
+                    <div class="text-center mb-8">
+                        <div class="w-20 h-20 bg-gradient-to-r from-green-500 to-green-700 rounded-full mx-auto mb-6 flex items-center justify-center">
+                            <i class="fas fa-users text-3xl text-white"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800">Local Expertise</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-check-circle text-green-500"></i>
+                            <span class="text-gray-600">Deep understanding of regional conditions</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-check-circle text-green-500"></i>
+                            <span class="text-gray-600">Knowledge of local regulations and policies</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-check-circle text-green-500"></i>
+                            <span class="text-gray-600">Established relationships with authorities</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-check-circle text-green-500"></i>
+                            <span class="text-gray-600">Quick response and local support</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-10 rounded-3xl shadow-2xl">
+                    <div class="text-center mb-8">
+                        <div class="w-20 h-20 bg-gradient-to-r from-orange-500 to-orange-700 rounded-full mx-auto mb-6 flex items-center justify-center">
+                            <i class="fas fa-clock text-3xl text-white"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800">Proven Track Record</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-check-circle text-green-500"></i>
+                            <span class="text-gray-600">500+ successful installations</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-check-circle text-green-500"></i>
+                            <span class="text-gray-600">5MW+ total installed capacity</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-check-circle text-green-500"></i>
+                            <span class="text-gray-600">99% customer satisfaction rate</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-check-circle text-green-500"></i>
+                            <span class="text-gray-600">Zero system failures in 5 years</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Trust Factors -->
+            <div class="bg-gradient-to-r from-blue-600 to-orange-500 text-white p-16 rounded-3xl mb-24">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold mb-6">Trust Factors That Matter</h2>
+                    <p class="text-xl text-blue-100 max-w-3xl mx-auto">Numbers that speak for our commitment to quality and customer satisfaction.</p>
+                </div>
+                
+                <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="text-center bg-white bg-opacity-10 backdrop-blur-sm p-8 rounded-2xl">
+                        <div class="text-5xl font-bold mb-4">25+</div>
+                        <div class="text-lg font-semibold mb-2">Years Warranty</div>
+                        <div class="text-sm text-blue-100">On solar panels with linear performance guarantee</div>
+                    </div>
+                    <div class="text-center bg-white bg-opacity-10 backdrop-blur-sm p-8 rounded-2xl">
+                        <div class="text-5xl font-bold mb-4">100%</div>
+                        <div class="text-lg font-semibold mb-2">Quality Assured</div>
+                        <div class="text-sm text-blue-100">Premium components with international certifications</div>
+                    </div>
+                    <div class="text-center bg-white bg-opacity-10 backdrop-blur-sm p-8 rounded-2xl">
+                        <div class="text-5xl font-bold mb-4">24/7</div>
+                        <div class="text-lg font-semibold mb-2">Support Available</div>
+                        <div class="text-sm text-blue-100">Round-the-clock customer service and technical support</div>
+                    </div>
+                    <div class="text-center bg-white bg-opacity-10 backdrop-blur-sm p-8 rounded-2xl">
+                        <div class="text-5xl font-bold mb-4">FREE</div>
+                        <div class="text-lg font-semibold mb-2">Site Survey</div>
+                        <div class="text-sm text-blue-100">Professional assessment with no obligations</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quality Commitment -->
+            <div class="grid lg:grid-cols-2 gap-16 items-center mb-24">
+                <div>
+                    <h2 class="text-4xl font-bold text-gray-800 mb-8">Our Quality Commitment</h2>
+                    <div class="space-y-8">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-shield-alt text-blue-600 text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-800 mb-3">Premium Components Only</h3>
+                                <p class="text-gray-600 leading-relaxed">We use only Tier-1 solar panels, premium inverters, and high-grade mounting systems. Every component is carefully selected for maximum efficiency, durability, and performance in Indian conditions.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-tools text-green-600 text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-800 mb-3">Professional Installation</h3>
+                                <p class="text-gray-600 leading-relaxed">Our certified technicians follow international installation standards and safety protocols. Every installation is inspected and tested to ensure optimal performance and safety compliance.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-chart-line text-orange-600 text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-800 mb-3">Performance Monitoring</h3>
+                                <p class="text-gray-600 leading-relaxed">We provide advanced monitoring systems to track your solar system's performance in real-time. Regular maintenance and performance optimization ensure maximum energy generation throughout the system's life.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-gradient-to-br from-gray-50 to-white p-12 rounded-3xl shadow-xl">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-8 text-center">Quality Certifications</h3>
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="text-center p-6 bg-blue-50 rounded-2xl">
+                            <i class="fas fa-certificate text-3xl text-blue-600 mb-4"></i>
+                            <div class="font-semibold text-gray-800">ISO 9001:2015</div>
+                            <div class="text-sm text-gray-600">Quality Management</div>
+                        </div>
+                        <div class="text-center p-6 bg-green-50 rounded-2xl">
+                            <i class="fas fa-leaf text-3xl text-green-600 mb-4"></i>
+                            <div class="font-semibold text-gray-800">ISO 14001:2015</div>
+                            <div class="text-sm text-gray-600">Environmental Management</div>
+                        </div>
+                        <div class="text-center p-6 bg-orange-50 rounded-2xl">
+                            <i class="fas fa-hard-hat text-3xl text-orange-600 mb-4"></i>
+                            <div class="font-semibold text-gray-800">OHSAS 18001</div>
+                            <div class="text-sm text-gray-600">Safety Management</div>
+                        </div>
+                        <div class="text-center p-6 bg-purple-50 rounded-2xl">
+                            <i class="fas fa-check-double text-3xl text-purple-600 mb-4"></i>
+                            <div class="font-semibold text-gray-800">IEC Standards</div>
+                            <div class="text-sm text-gray-600">International Compliance</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Customer Support -->
+            <div class="bg-white p-16 rounded-3xl shadow-2xl">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold text-gray-800 mb-6">Unmatched Customer Support</h2>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">Our relationship with you doesn't end with installation. We're committed to your success for the entire life of your solar system.</p>
+                </div>
+                
+                <div class="grid md:grid-cols-3 gap-12">
+                    <div class="text-center">
+                        <div class="w-24 h-24 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full mx-auto mb-8 flex items-center justify-center">
+                            <i class="fas fa-headset text-4xl text-white"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-6">24/7 Technical Support</h3>
+                        <p class="text-gray-600 leading-relaxed">Round-the-clock technical support through phone, email, and WhatsApp. Our expert team is always ready to help with any questions or issues you may have.</p>
+                        <div class="mt-6 space-y-2 text-sm text-gray-500">
+                            <div>📞 +91 8989933932</div>
+                            <div>📧 suryadootenergysolution@gmail.com</div>
+                            <div>💬 WhatsApp Support Available</div>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="w-24 h-24 bg-gradient-to-r from-green-500 to-blue-500 rounded-full mx-auto mb-8 flex items-center justify-center">
+                            <i class="fas fa-wrench text-4xl text-white"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-6">Preventive Maintenance</h3>
+                        <p class="text-gray-600 leading-relaxed">Regular maintenance schedules to keep your system running at peak performance. We proactively identify and resolve potential issues before they affect your energy generation.</p>
+                        <div class="mt-6 space-y-2 text-sm text-gray-500">
+                            <div>🔧 Quarterly System Checkups</div>
+                            <div>🧹 Panel Cleaning Services</div>
+                            <div>📊 Performance Analysis Reports</div>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="w-24 h-24 bg-gradient-to-r from-orange-500 to-red-500 rounded-full mx-auto mb-8 flex items-center justify-center">
+                            <i class="fas fa-mobile-alt text-4xl text-white"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-6">Remote Monitoring</h3>
+                        <p class="text-gray-600 leading-relaxed">Advanced monitoring systems allow us to track your system's performance remotely. We can identify and often resolve issues before you even notice them.</p>
+                        <div class="mt-6 space-y-2 text-sm text-gray-500">
+                            <div>📱 Mobile App Access</div>
+                            <div>📈 Real-time Performance Data</div>
+                            <div>🚨 Instant Alert Notifications</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Page -->
+    <section id="contact" class="page-section pt-24">
+        <div class="container mx-auto px-6 py-16">
+            <!-- Hero Section -->
+            <div class="text-center mb-20">
+                <h1 class="text-5xl lg:text-6xl font-bold text-gray-800 mb-8">Get Your Free Solar Quote</h1>
+                <p class="text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed">Ready to make the switch to solar? Contact us today for a free consultation and customized solar solution for your home or business.</p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-16">
+                <!-- Contact Form -->
+                <div class="bg-white p-12 rounded-3xl shadow-2xl">
+                    <div class="text-center mb-10">
+                        <div class="w-20 h-20 bg-gradient-to-r from-blue-500 to-orange-500 rounded-full mx-auto mb-6 flex items-center justify-center">
+                            <i class="fas fa-calculator text-3xl text-white"></i>
+                        </div>
+                        <h2 class="text-3xl font-bold text-gray-800 mb-4">Request Free Quote</h2>
+                        <p class="text-gray-600">Fill out the form below and we'll get back to you within 24 hours with a customized solar solution.</p>
+                    </div>
+                    
+                    <form id="contactForm" onsubmit="submitForm(event)" class="space-y-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-gray-700 text-sm font-bold mb-3">Full Name *</label>
+                                <input type="text" id="fullName" required class="w-full px-4 py-4 border border-gray-300 rounded-xl focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all">
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 text-sm font-bold mb-3">Phone Number *</label>
+                                <input type="tel" id="phone" required class="w-full px-4 py-4 border border-gray-300 rounded-xl focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all">
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-gray-700 text-sm font-bold mb-3">Email Address *</label>
+                            <input type="email" id="email" required class="w-full px-4 py-4 border border-gray-300 rounded-xl focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-gray-700 text-sm font-bold mb-3">Type of Service Interested In *</label>
+                            <select id="serviceType" required class="w-full px-4 py-4 border border-gray-300 rounded-xl focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all">
+                                <option value="">Select a service</option>
+                                <option value="Residential Solar System">Residential Solar System (1kW - 10kW)</option>
+                                <option value="Commercial Solar System">Commercial Solar System (10kW+)</option>
+                                <option value="Agricultural Solar Pump">Agricultural Solar Pumps</option>
+                                <option value="Site Survey">Site Survey & System Design</option>
+                                <option value="Government Subsidy">Government Subsidy Assistance</option>
+                                <option value="Solar Panel Supply">Solar Panel Supply & Mounting</option>
+                                <option value="AMC">System Commissioning & AMC</option>
+                                <option value="Other">Other Requirements</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-gray-700 text-sm font-bold mb-3">Monthly Electricity Bill (Optional)</label>
+                            <select class="w-full px-4 py-4 border border-gray-300 rounded-xl focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all">
+                                <option value="">Select your monthly bill range</option>
+                                <option value="Below ₹2,000">Below ₹2,000</option>
+                                <option value="₹2,000 - ₹5,000">₹2,000 - ₹5,000</option>
+                                <option value="₹5,000 - ₹10,000">₹5,000 - ₹10,000</option>
+                                <option value="₹10,000 - ₹25,000">₹10,000 - ₹25,000</option>
+                                <option value="Above ₹25,000">Above ₹25,000</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-gray-700 text-sm font-bold mb-3">Message/Specific Requirements</label>
+                            <textarea id="message" rows="5" class="w-full px-4 py-4 border border-gray-300 rounded-xl focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all" placeholder="Tell us about your specific requirements, property type, available space, or any questions you have..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full solar-gradient text-white py-5 rounded-xl text-lg font-bold hover:shadow-2xl transform hover:scale-105 transition-all duration-300">
+                            <i class="fas fa-paper-plane mr-3"></i>
+                            Send My Quote Request
+                        </button>
+                    </form>
+                    
+                    <!-- Success Message -->
+                    <div id="successMessage" class="hidden mt-8 p-6 bg-green-100 border border-green-400 text-green-700 rounded-xl">
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-2xl mr-4"></i>
+                            <div>
+                                <div class="font-bold text-lg">Thank you for your inquiry!</div>
+                                <div>We'll get back to you within 24 hours with a customized solar solution.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Contact Information -->
+                <div class="space-y-8">
+                    <!-- Owner Info -->
+                    <div class="bg-gradient-to-r from-blue-600 to-orange-500 text-white p-12 rounded-3xl">
+                        <div class="text-center mb-10">
+                            <div class="w-24 h-24 bg-white bg-opacity-20 rounded-full mx-auto mb-6 flex items-center justify-center">
+                                <i class="fas fa-user-tie text-4xl"></i>
+                            </div>
+                            <h2 class="text-3xl font-bold mb-4">Uday Raj Patel</h2>
+                            <p class="text-xl text-blue-100">Founder & Managing Director</p>
+                        </div>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-center space-x-4 bg-white bg-opacity-10 p-4 rounded-xl">
+                                <div class="w-12 h-12 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-phone text-xl"></i>
+                                </div>
+                                <div>
+                                    <div class="font-bold text-lg">+91 8989933932</div>
+                                    <div class="text-blue-100">Call or WhatsApp anytime</div>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center space-x-4 bg-white bg-opacity-10 p-4 rounded-xl">
+                                <div class="w-12 h-12 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-envelope text-xl"></i>
+                                </div>
+                                <div>
+                                    <div class="font-bold text-lg">suryadootenergysolution@gmail.com</div>
+                                    <div class="text-blue-100">Email us your requirements</div>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start space-x-4 bg-white bg-opacity-10 p-4 rounded-xl">
+                                <div class="w-12 h-12 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-map-marker-alt text-xl"></i>
+                                </div>
+                                <div>
+                                    <div class="font-bold text-lg">Visit Our Office</div>
+                                    <div class="text-blue-100">Shop no. 3, 1st floor</div>
+                                    <div class="text-blue-100">Nagar Palika Complex</div>
+                                    <div class="text-blue-100">Near Vardaan Hotel</div>
+                                    <div class="text-blue-100">Narsinghpur 487001, MP</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Business Hours -->
+                    <div class="bg-white p-8 rounded-2xl shadow-lg">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-6 text-center">Business Hours</h3>
+                        <div class="space-y-4">
+                            <div class="flex justify-between items-center py-3 border-b border-gray-100">
+                                <span class="font-semibold text-gray-700">Monday - Saturday</span>
+                                <span class="text-gray-600">9:00 AM - 7:00 PM</span>
+                            </div>
+                            <div class="flex justify-between items-center py-3 border-b border-gray-100">
+                                <span class="font-semibold text-gray-700">Sunday</span>
+                                <span class="text-gray-600">10:00 AM - 5:00 PM</span>
+                            </div>
+                            <div class="flex justify-between items-center py-3">
+                                <span class="font-semibold text-gray-700">Emergency Support</span>
+                                <span class="text-green-600 font-semibold">24/7 Available</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Map -->
+                    <div class="bg-white p-6 rounded-2xl shadow-lg">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-6 text-center">Find Us Here</h3>
+                        <div class="w-full h-80 bg-gray-200 rounded-xl overflow-hidden">
+                            <iframe 
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3679.5!2d79.9!3d22.95!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjLCsDU3JzAwLjAiTiA3OcKwNTQnMDAuMCJF!5e0!3m2!1sen!2sin!4v1234567890"
+                                width="100%" 
+                                height="100%" 
+                                style="border:0;" 
+                                allowfullscreen="" 
+                                loading="lazy" 
+                                referrerpolicy="no-referrer-when-downgrade"
+                                class="rounded-xl">
+                            </iframe>
+                        </div>
+                        <div class="mt-4 text-center">
+                            <p class="text-gray-600">📍 Nagar Palika Complex, Near Vardaan Hotel, Narsinghpur 487001</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
+                <!-- Company Info -->
+                <div>
+                    <div class="flex items-center space-x-4 mb-8">
+                        <div class="w-14 h-14 rounded-full overflow-hidden bg-white">
+                            <img src="logo.jpg" alt="Suryadoot Energy Solution Logo" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <div class="w-full h-full bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full flex items-center justify-center" style="display: none;">
+                                <i class="fas fa-sun text-white text-2xl"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold">Suryadoot Energy</h3>
+                            <p class="text-gray-400">Solar Solutions</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 leading-relaxed mb-6">Your trusted partner for clean and sustainable energy solutions in Narsinghpur and beyond. We install top 10 solar brands with 500+ satisfied customers.</p>
+                    <div class="flex space-x-4">
+                        <div class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors cursor-pointer">
+                            <i class="fab fa-facebook-f"></i>
+                        </div>
+                        <div class="w-10 h-10 bg-blue-400 rounded-full flex items-center justify-center hover:bg-blue-500 transition-colors cursor-pointer">
+                            <i class="fab fa-twitter"></i>
+                        </div>
+                        <div class="w-10 h-10 bg-green-600 rounded-full flex items-center justify-center hover:bg-green-700 transition-colors cursor-pointer">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-xl font-bold mb-6">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" onclick="showPage('home')" class="text-gray-300 hover:text-white transition-colors flex items-center space-x-2"><i class="fas fa-home w-4"></i><span>Home</span></a></li>
+                        <li><a href="#" onclick="showPage('about')" class="text-gray-300 hover:text-white transition-colors flex items-center space-x-2"><i class="fas fa-info-circle w-4"></i><span>About Us</span></a></li>
+                        <li><a href="#" onclick="showPage('services')" class="text-gray-300 hover:text-white transition-colors flex items-center space-x-2"><i class="fas fa-cogs w-4"></i><span>Services</span></a></li>
+                        <li><a href="#" onclick="showPage('why-choose')" class="text-gray-300 hover:text-white transition-colors flex items-center space-x-2"><i class="fas fa-star w-4"></i><span>Why Choose Us</span></a></li>
+                        <li><a href="#" onclick="showPage('contact')" class="text-gray-300 hover:text-white transition-colors flex items-center space-x-2"><i class="fas fa-phone w-4"></i><span>Contact</span></a></li>
+                    </ul>
+                </div>
+                
+                <!-- Services -->
+                <div>
+                    <h4 class="text-xl font-bold mb-6">Our Services</h4>
+                    <ul class="space-y-3 text-gray-300">
+                        <li class="flex items-center space-x-2"><i class="fas fa-solar-panel w-4 text-blue-400"></i><span>On-Grid Solar Systems</span></li>
+                        <li class="flex items-center space-x-2"><i class="fas fa-tractor w-4 text-green-400"></i><span>Agricultural Solar Pumps</span></li>
+                        <li class="flex items-center space-x-2"><i class="fas fa-search w-4 text-orange-400"></i><span>Site Survey & Design</span></li>
+                        <li class="flex items-center space-x-2"><i class="fas fa-file-alt w-4 text-purple-400"></i><span>Government Subsidy</span></li>
+                        <li class="flex items-center space-x-2"><i class="fas fa-tools w-4 text-red-400"></i><span>Installation & Maintenance</span></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="text-xl font-bold mb-6">Contact Information</h4>
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-user text-blue-400"></i>
+                            <div>
+                                <div class="font-semibold">Uday Raj Patel</div>
+                                <div class="text-gray-400 text-sm">Founder & Owner</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-phone text-green-400"></i>
+                            <div>
+                                <div class="font-semibold">+91 8989933932</div>
+                                <div class="text-gray-400 text-sm">Call or WhatsApp</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-envelope text-orange-400"></i>
+                            <div>
+                                <div class="font-semibold text-sm">suryadootenergysolution@gmail.com</div>
+                                <div class="text-gray-400 text-sm">Email us anytime</div>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <i class="fas fa-map-marker-alt text-red-400 mt-1"></i>
+                            <div>
+                                <div class="font-semibold">Narsinghpur 487001</div>
+                                <div class="text-gray-400 text-sm">Madhya Pradesh, India</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-12 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+                    <p class="text-gray-400 text-center md:text-left">&copy; 2024 Suryadoot Energy Solution. All rights reserved.</p>
+                    <div class="flex items-center space-x-6 text-gray-400 text-sm">
+                        <span>Top 10 Solar Brands Available</span>
+                        <span>•</span>
+                        <span>ISO Certified</span>
+                        <span>•</span>
+                        <span>500+ Happy Customers</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Navigation functionality
+        function showPage(pageId) {
+            // Hide all pages
+            const pages = document.querySelectorAll('.page-section');
+            pages.forEach(page => page.classList.remove('active'));
+            
+            // Show selected page
+            document.getElementById(pageId).classList.add('active');
+            
+            // Update navigation
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => link.classList.remove('active'));
+            
+            // Find and activate the corresponding nav link
+            const activeLink = Array.from(navLinks).find(link => 
+                link.getAttribute('onclick').includes(pageId)
+            );
+            if (activeLink) {
+                activeLink.classList.add('active');
+            }
+            
+            // Close mobile menu if open
+            document.getElementById('mobileMenu').classList.add('hidden');
+            
+            // Scroll to top smoothly
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.classList.toggle('hidden');
+        }
+
+        // Form submission
+        function submitForm(event) {
+            event.preventDefault();
+            
+            const formData = {
+                fullName: document.getElementById('fullName').value,
+                phone: document.getElementById('phone').value,
+                email: document.getElementById('email').value,
+                serviceType: document.getElementById('serviceType').value,
+                message: document.getElementById('message').value
+            };
+            
+            // Create email content
+            const emailSubject = `Solar Inquiry from ${formData.fullName} - ${formData.serviceType}`;
+            const emailBody = `
+New Solar Energy Inquiry Received:
+
+Customer Details:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'97341d33110c8730',t:'MTc1NTg4Mzk5NC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
